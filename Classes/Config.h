@@ -21,7 +21,8 @@ enum {
     ConfigPva,
     ConfigOscaro,
     ConfigTechtitanhq,
-    ConfigPepsi,
+     ConfigPepsi,
+     ConfigAristo
     /*EAOConfig*/
 };
 

@@ -150,6 +150,11 @@ BOOL searchViewEnabled;
                   
                   [self.navigationController.navigationBar addSubview:imageTitle];
                   break;
+             case ConfigAristo:
+                  titleImage = [UIImage imageNamed:@"titleImageAristocrat.png"];
+                  imageTitle = [[UIImageView alloc] initWithImage:titleImage];
+                  self.navigationItem.titleView = imageTitle;
+                  break;
             /*EAOTitle*/
         }
     }
@@ -302,7 +307,7 @@ BOOL searchViewEnabled;
     // Areas was nil, meaning we probably had a connection error
     if (!areas[@"hierarchy"]) {
         [self showRefreshButton];
-        [iFixitAPI displayConnectionErrorAlert];
+         [iFixitAPI displayLoggedOutErrorAlert:self];
     }
     
     if ([areas[@"hierarchy"] allKeys].count) {
@@ -765,6 +770,10 @@ heightForHeaderInSection:(NSInteger)section {
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+     if ([self.categories[self.categoryTypes[section]] count] == 0) {
+          UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 0)];
+          return view;
+     }
      UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
      /* Create custom view to display section header... */
      [view setBackgroundColor:[UIColor redColor]];
@@ -1125,7 +1134,7 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)gotCategoryResult:(NSDictionary *)results {
     if (!results) {
-        [iFixitAPI displayConnectionErrorAlert];
+         [iFixitAPI displayLoggedOutErrorAlert:self];
         return;
     }
 
