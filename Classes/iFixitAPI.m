@@ -35,7 +35,7 @@ static int volatile openConnections = 0;
 - (void)loadAppId {
       // look for the iFixit app id by default
       NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iFixit-App-Id" ofType: @"plist"];
-      NSString *appId = [NSDictionary dictionaryWithContentsOfFile:plistPath][@"dozuki"];
+      NSString *appId = [NSDictionary dictionaryWithContentsOfFile:plistPath][@"pva"];
       
       self.appId = appId ? appId : @"";
 }
@@ -321,7 +321,7 @@ static int volatile openConnections = 0;
 
 - (void)loginWithSessionId:(NSString *)sessionId forObject:(id)object withSelector:(SEL)selector {
       
-      // .dozuki.com hosts force SSL, so we match that here. Otherwise, for SSO sites with custom domains,
+      // .pva.com hosts force SSL, so we match that here. Otherwise, for SSO sites with custom domains,
       // SSL doesn't exist so we just use HTTP.
       NSString *url =	[NSString stringWithFormat:@"https://%@/api/2.0/user", [Config currentConfig].host];
       

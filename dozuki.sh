@@ -69,12 +69,12 @@ elif [ "$1" == "dripassist" ]; then
 elif [ "$1" == "pva" ]; then
    echo "Pva"
    cp Graphics/Sites/Pva/*png .
-   sed -i '.bak' -e 's/com.ifixit.ifixit/com.dozuki.pva/g' iFixit-Info.plist
-   sed -i '.bak' -e 's/iFixit/PVA Support/g' iFixit-Info.plist
-   sed -i '.bak' -e 's/>ifixit</>pva</g' iFixit-Info.plist
+   sed -i '.bak' -e 's/com.dozuki.dozuki/com.dozuki.pva/g' iFixit-Info.plist
+   sed -i '.bak' -e 's/Dozuki/PVA Support/g' iFixit-Info.plist
+   sed -i '.bak' -e 's/>dozuki</>pva</g' iFixit-Info.plist
    sed -i '.bak' -e 's/\[Config currentConfig\].dozuki = YES;/\[Config currentConfig\].dozuki = NO;/' Classes/iFixitAppDelegate.m
-   sed -i '.bak' -e 's/\[Config currentConfig\].site = ConfigIFixit;/\[Config currentConfig\].site = ConfigPva;/' Classes/iFixitAppDelegate.m
-   sed -i '.bak' -e 's/ifixit/pva/g' Classes/iFixitAPI.m
+   sed -i '.bak' -e 's/\[Config currentConfig\].site = ConfigDozuki;/\[Config currentConfig\].site = ConfigPva;/' Classes/iFixitAppDelegate.m
+   sed -i '.bak' -e 's/dozuki/pva/g' Classes/iFixitAPI.m
 elif [ "$1" == "oscaro" ]; then
    echo "Oscaro"
    cp Graphics/Sites/Oscaro/*png .

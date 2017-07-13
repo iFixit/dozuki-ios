@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "386"
             endingLineNumber = "386"
-            landmarkName = "-loginWithLogin:andPassword:forObject:withSelector:"
+            landmarkName = "-registerWithLogin:andPassword:andName:andUsername:forObject:withSelector:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "306"
             endingLineNumber = "306"
-            landmarkName = "-getSearchResults:withFilter:forObject:withSelector:"
+            landmarkName = "-checkLogin:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -718,7 +718,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "235"
             endingLineNumber = "235"
-            landmarkName = "-getCategory:forObject:withSelector:"
+            landmarkName = "-getGuides:forObject:withSelector:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
