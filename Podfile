@@ -1,9 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
-project 'Aristocrat.xcodeproj'
+project 'Hypertherm.xcodeproj'
 
 platform :ios, '9.1'
 
-target "Aristocrat" do
+target "Hypertherm" do
 
 pod 'ZBarSDK', '~> 1.3'
 pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'

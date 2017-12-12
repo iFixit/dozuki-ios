@@ -15,6 +15,7 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow-iPad.xib */; };
 		51A61827C4C27DB2017A5E17 /* libPods-Aristocrat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FDD708CD2AC34E96BCA4EE /* libPods-Aristocrat.a */; };
+		8A422D4BA2F6A2D41ABA1123 /* libPods-Hypertherm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4FC9193FE2A010FBC8382A /* libPods-Hypertherm.a */; };
 		9C002FBF182EE57C00822063 /* accustream_logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C002FBE182EE57C00822063 /* accustream_logo_transparent.png */; };
 		9C1A1983189735C3003E79F0 /* GuideLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1982189735C3003E79F0 /* GuideLib.m */; };
 		9C1EB8121B703BE200CE11F5 /* detailViewTextOscaro.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1EB80F1B703BE200CE11F5 /* detailViewTextOscaro.png */; };
@@ -315,6 +316,7 @@
 		40331C958D2F4747A5B6D568 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D69F343AB72D3B03738E22E /* Pods-Aristocrat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aristocrat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aristocrat/Pods-Aristocrat.debug.xcconfig"; sourceTree = "<group>"; };
 		64D789877286DB7C0959DA51 /* Pods-Aristocrat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aristocrat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aristocrat/Pods-Aristocrat.release.xcconfig"; sourceTree = "<group>"; };
+		6E4FC9193FE2A010FBC8382A /* libPods-Hypertherm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hypertherm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73099B6C2509F4875C8752E9 /* Pods-iFixit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFixit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFixit/Pods-iFixit.debug.xcconfig"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iFixit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iFixit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		95787745AD6E441EDE1F8491 /* Pods-Postmix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Postmix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Postmix/Pods-Postmix.debug.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 		9CE6783E18387080001912DF /* accustream_step.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = accustream_step.css; sourceTree = "<group>"; };
 		9CF8AB2E1A44D2400083B725 /* comcast_logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comcast_logo_transparent.png; sourceTree = "<group>"; };
 		9CF8AB321A44D7A30083B725 /* titleImageComcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImageComcast.png; sourceTree = "<group>"; };
+		9E24064F64311E8BA9015DF8 /* Pods-Hypertherm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypertherm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3864F52D0953CBEC96DF93 /* libPods-Postmix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Postmix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0B27AC15E7E3550088BA07 /* titleImageZeal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImageZeal.png; sourceTree = "<group>"; };
 		AB0B27AF15E7E36B0088BA07 /* titleImageZeal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "titleImageZeal@2x.png"; sourceTree = "<group>"; };
@@ -523,6 +526,7 @@
 		C1DCF51E1EFCD8F200043944 /* titleImageAristocrat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImageAristocrat.png; sourceTree = "<group>"; };
 		C1F692511D638C9F00906B2D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iFixit/Images.xcassets; sourceTree = "<group>"; };
 		C522573AE427EC8CC27CCF8C /* Pods-iFixit.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFixit.ad-hoc.xcconfig"; path = "Pods/Target Support Files/Pods-iFixit/Pods-iFixit.ad-hoc.xcconfig"; sourceTree = "<group>"; };
+		D14D380CCC942FCD9BFED93B /* Pods-Hypertherm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypertherm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm.release.xcconfig"; sourceTree = "<group>"; };
 		DA056779138D976600660C86 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		DA05677A138D976600660C86 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		DA086C79147CA39900BD9A2F /* detailViewArrowDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailViewArrowDark.png; path = Graphics/detailViewArrowDark.png; sourceTree = "<group>"; };
@@ -554,6 +558,7 @@
 		DA275DC01510510700A8A09C /* register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "register@2x.png"; path = "Graphics/register@2x.png"; sourceTree = "<group>"; };
 		DA2F766E12FB87D900683D33 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		DA2F766F12FB87D900683D33 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		DA340FC5D39C15788BD639E2 /* Pods-Hypertherm.ad-hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypertherm.ad-hoc.xcconfig"; path = "Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm.ad-hoc.xcconfig"; sourceTree = "<group>"; };
 		DA35628A1476EDDD00683947 /* detailViewFist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailViewFist.png; path = Graphics/detailViewFist.png; sourceTree = "<group>"; };
 		DA35629B1476F84C00683947 /* detailViewText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailViewText.png; path = Graphics/detailViewText.png; sourceTree = "<group>"; };
 		DA35629D147717D700683947 /* tabBarItemList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBarItemList.png; path = Graphics/tabBarItemList.png; sourceTree = "<group>"; };
@@ -727,6 +732,7 @@
 				DA53FA75141368BB00D5388F /* libicucore.dylib in Frameworks */,
 				9CE0D45419DB191B00292462 /* libGoogleAnalyticsServices.a in Frameworks */,
 				51A61827C4C27DB2017A5E17 /* libPods-Aristocrat.a in Frameworks */,
+				8A422D4BA2F6A2D41ABA1123 /* libPods-Hypertherm.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,7 +770,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				9C1A1981189735C3003E79F0 /* GuideLib.h */,
@@ -873,6 +879,7 @@
 				BF194D64CF4BF5C70428F54D /* libPods-iFixit.a */,
 				AA3864F52D0953CBEC96DF93 /* libPods-Postmix.a */,
 				E5FDD708CD2AC34E96BCA4EE /* libPods-Aristocrat.a */,
+				6E4FC9193FE2A010FBC8382A /* libPods-Hypertherm.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -892,6 +899,9 @@
 				4D69F343AB72D3B03738E22E /* Pods-Aristocrat.debug.xcconfig */,
 				168EC72695E7C4C43BE8D329 /* Pods-Aristocrat.ad-hoc.xcconfig */,
 				64D789877286DB7C0959DA51 /* Pods-Aristocrat.release.xcconfig */,
+				9E24064F64311E8BA9015DF8 /* Pods-Hypertherm.debug.xcconfig */,
+				DA340FC5D39C15788BD639E2 /* Pods-Hypertherm.ad-hoc.xcconfig */,
+				D14D380CCC942FCD9BFED93B /* Pods-Hypertherm.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1426,9 +1436,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Aristocrat */ = {
+		1D6058900D05DD3D006BFB54 /* Hypertherm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Aristocrat" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Hypertherm" */;
 			buildPhases = (
 				6DAA79E961574847B3059BB7 /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
@@ -1443,7 +1453,7 @@
 			);
 			dependencies = (
 			);
-			name = Aristocrat;
+			name = Hypertherm;
 			productName = iFixit;
 			productReference = 1D6058910D05DD3D006BFB54 /* iFixit.app */;
 			productType = "com.apple.product-type.application";
@@ -1467,7 +1477,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Aristocrat" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Hypertherm" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -1481,12 +1491,12 @@
 				de,
 				es,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Aristocrat */,
+				1D6058900D05DD3D006BFB54 /* Hypertherm */,
 			);
 		};
 /* End PBXProject section */
@@ -1707,7 +1717,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aristocrat/Pods-Aristocrat-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A9A334BC8773A53B14F2721 /* [CP] Embed Pods Frameworks */ = {
@@ -1722,7 +1732,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aristocrat/Pods-Aristocrat-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6DAA79E961574847B3059BB7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1731,13 +1741,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hypertherm-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9CFA265419DB2CB40059A1C3 /* ShellScript */ = {
@@ -1871,7 +1884,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D69F343AB72D3B03738E22E /* Pods-Aristocrat.debug.xcconfig */;
+			baseConfigurationReference = 9E24064F64311E8BA9015DF8 /* Pods-Hypertherm.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
@@ -1905,7 +1918,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.aristo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1917,7 +1930,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64D789877286DB7C0959DA51 /* Pods-Aristocrat.release.xcconfig */;
+			baseConfigurationReference = D14D380CCC942FCD9BFED93B /* Pods-Hypertherm.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
@@ -1949,7 +1962,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.aristo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2047,7 +2060,7 @@
 		};
 		C1523E29120E382D007E8DD8 /* Ad-Hoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 168EC72695E7C4C43BE8D329 /* Pods-Aristocrat.ad-hoc.xcconfig */;
+			baseConfigurationReference = DA340FC5D39C15788BD639E2 /* Pods-Hypertherm.ad-hoc.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
@@ -2081,7 +2094,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.aristo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2094,7 +2107,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Aristocrat" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Hypertherm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -2104,7 +2117,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Aristocrat" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Hypertherm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
