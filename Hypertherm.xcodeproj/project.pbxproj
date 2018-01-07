@@ -1443,7 +1443,6 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				58371555D0BB4407AA5E5015 /* [CP] Copy Pods Resources */,
-				9CFA265419DB2CB40059A1C3 /* ShellScript */,
 				5A9A334BC8773A53B14F2721 /* [CP] Embed Pods Frameworks */,
 				C1205D601F7B041F00509078 /* ShellScript */,
 			);
@@ -1757,19 +1756,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9CFA265419DB2CB40059A1C3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 25b29ddac9745140e41d9a00281ea38965b44f4c cc999ea2e35c2546cd9bc6a1caf46ee308cbe01571051ae2ca20da426aa4c2fe";
-		};
 		C1205D601F7B041F00509078 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1781,7 +1767,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 25b29ddac9745140e41d9a00281ea38965b44f4c cc999ea2e35c2546cd9bc6a1caf46ee308cbe01571051ae2ca20da426aa4c2fe";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 88e5719c9f7fa044745738811e8cb745a22c1ddc 6fd3c87488e3ae5c49ba67d286926fd4ab431a2f4152966492901e6e8d03c6a6";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1923,7 +1909,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1968,7 +1954,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2101,7 +2087,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
