@@ -107,7 +107,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     /* Configure. */
     [Config currentConfig].dozuki = NO;
-    [Config currentConfig].site = ConfigAristo;
+    [Config currentConfig].site = ConfigAccustream;
     
     /* Track. */
     [self setupAnalytics];

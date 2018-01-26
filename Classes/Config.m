@@ -19,7 +19,7 @@ static Config *currentConfig = nil;
 + (Config *)currentConfig {
     if (!currentConfig) {
         currentConfig = [[self alloc] init];
-        currentConfig.site = ConfigIFixit;
+        currentConfig.site = ConfigAccustream;
         currentConfig.dozuki = NO;
     }
     return currentConfig;
