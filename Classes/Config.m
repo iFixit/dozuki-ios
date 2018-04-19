@@ -131,6 +131,7 @@ static Config *currentConfig = nil;
         case ConfigOscaro:
             self.host = @"oscaro.dozuki.com";
             self.baseURL = @"http://oscaro.dozuki.com";
+            self.custom_domain = @"tutoriels.oscaro.com";
             answersEnabled = NO;
             collectionsEnabled = NO;
             self.store = nil;
@@ -285,7 +286,7 @@ static Config *currentConfig = nil;
               self.textColor = [UIColor whiteColor];
               self.toolbarColor = [UIColor blackColor];
               self.buttonColor = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ? [UIColor colorWithRed:0.0f green:113/255.0f blue:206.0/255.0f alpha:1.0] : self.toolbarColor;
-              self.navBarColor = [UIColor whiteColor];
+              self.navBarColor = [UIColor blackColor];
               
               // Load intro and step css from the css folder.
               self.introCSS = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ifixit_intro" ofType:@"css"] encoding:NSUTF8StringEncoding error:nil];

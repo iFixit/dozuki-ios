@@ -7,23 +7,23 @@
 //
 
 enum {
-     ConfigIFixit,
-     ConfigIFixitDev,
-     ConfigMake,
-     ConfigMakeDev,
-     ConfigDozuki,
-     ConfigZeal,
-     ConfigMjtrim,
-     ConfigAccustream,
-     ConfigMagnolia,
-     ConfigComcast,
-     ConfigDripAssist,
-     ConfigPva,
-     ConfigOscaro,
-     ConfigTechtitanhq,
+    ConfigIFixit,
+    ConfigIFixitDev,
+    ConfigMake,
+    ConfigMakeDev,
+    ConfigDozuki,
+    ConfigZeal,
+    ConfigMjtrim,
+    ConfigAccustream,
+    ConfigMagnolia,
+    ConfigComcast,
+    ConfigDripAssist,
+    ConfigPva,
+    ConfigOscaro,
+    ConfigTechtitanhq,
      ConfigPepsi,
      ConfigAristo
-     /*EAOConfig*/
+    /*EAOConfig*/
 };
 
 @interface Config : NSObject
@@ -37,8 +37,8 @@ enum {
 @property (nonatomic) NSInteger site;
 @property (nonatomic, copy) NSString *sso;
 @property (nonatomic, retain) NSDictionary *siteData;
-@property (nonatomic, retain) NSString *host;
 @property (nonatomic, retain) NSString *dozukiHost;
+@property (nonatomic, retain) NSString *host;
 @property (nonatomic, retain) NSString *custom_domain;
 @property (nonatomic, retain) NSString *baseURL;
 @property (nonatomic, retain) UIColor *backgroundColor;
@@ -55,6 +55,7 @@ enum {
 @property (nonatomic, retain) NSDictionary *siteInfo;
 
 + (Config *)currentConfig;
+
 + (NSString *)host;
 + (NSString *)baseURL;
 
