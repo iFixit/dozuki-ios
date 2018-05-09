@@ -1909,7 +1909,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.new;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1954,7 +1954,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.new;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2087,7 +2087,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.new;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

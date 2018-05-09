@@ -15,6 +15,7 @@ enum {
     ConfigZeal,
     ConfigMjtrim,
     ConfigAccustream,
+    ConfigHyperthermToolkit,
     ConfigMagnolia,
     ConfigComcast,
     ConfigDripAssist,
