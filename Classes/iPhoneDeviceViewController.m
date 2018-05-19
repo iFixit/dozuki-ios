@@ -24,6 +24,7 @@
 @synthesize topic=_topic;
 @synthesize guides=_guides;
 @synthesize wikis=_wikis;
+@synthesize docs=_docs;
 
 - (id)initWithTopic:(NSString *)topic {
      if ((self = [super initWithNibName:nil bundle:nil])) {
@@ -31,7 +32,8 @@
           self.guides = [NSArray array];
           self.wikis = [NSArray array];
           self.cats = [NSArray array];
-          
+          self.docs = [NSArray array];
+
           if (!topic)
                self.title = NSLocalizedString(@"Guides", nil);
           
@@ -71,6 +73,7 @@
      [container release];
      [button release];
 }
+
 - (void)hideLoading {
      loading = NO;
      self.navigationItem.rightBarButtonItem = nil;
@@ -100,17 +103,17 @@
      [self.tableView reloadData];
      [self hideLoading];
 }
+
 - (void)gotCategory:(NSDictionary *)data {
      if (!data) {
           [iFixitAPI displayLoggedOutErrorAlert:self];
           [self showRefreshButton];
           return;
      }
-     
-     
      self.guides = [data arrayForKey:@"guides"];
      self.wikis = [data arrayForKey:@"related_wikis"];
      self.cats = [data arrayForKey:@"children"];
+     self.docs = [data arrayForKey:@"documents"];
      [self.tableView reloadData];
      [self hideLoading];
      
@@ -175,7 +178,10 @@
      if (self.cats != nil && [self.cats count] > 0) {
           amount++;
      }
-     return 3;
+     if (self.docs != nil && [self.docs count] > 0) {
+          amount++;
+     }
+     return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -186,6 +192,8 @@
           return [self.cats count];
      } else if (section == 2) {
           return [self.wikis count];
+     } else if (section == 3) {
+          return [self.docs count];
      }
      
      return 0;
@@ -230,7 +238,7 @@
           [cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
           [cell setNeedsLayout];
           return cell;
-     } else {
+     } else if (indexPath.section == 2) {
           
           GuideCell *cell = (GuideCell*)[tableView dequeueReusableCellWithIdentifier:@"GuideCell"];
           if (cell == nil) {
@@ -244,6 +252,19 @@
           [cell setNeedsLayout];
           return cell;
           
+     }  else {
+          
+          GuideCell *cell = (GuideCell*)[tableView dequeueReusableCellWithIdentifier:@"GuideCell"];
+          if (cell == nil) {
+               cell = [[GuideCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:@"GuideCell"];
+          }
+          NSString *title = [self.docs[indexPath.row][@"title"] isEqual:@""] ? NSLocalizedString(@"Untitled", nil) : self.docs[indexPath.row][@"title"];
+          [cell.textLabel setText:title];
+          NSDictionary *imageData = self.docs[indexPath.row][@"image"];
+          NSString *thumbnailURL = [imageData isEqual:[NSNull null]] ? nil : imageData[@"medium"];
+          [cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
+          [cell setNeedsLayout];
+          return cell;
      }
      return nil;
 }
@@ -266,8 +287,10 @@ heightForHeaderInSection:(NSInteger)section {
           count = [self.cats count];
      } else if (section == 2) {
           count = [self.wikis count];
+     } else if (section == 3) {
+          count = [self.docs count];
      }
-     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && section==0) {
+     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && [self.docs count] == 0 && section==0) {
           return 40.0;
      } else if (count == 0) {
           return 0.0;
@@ -284,8 +307,10 @@ heightForHeaderInSection:(NSInteger)section {
           count = [self.cats count];
      } else if (section == 2) {
           count = [self.wikis count];
+     } else if (section == 3) {
+          count = [self.docs count];
      }
-     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && section==0) {
+     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && [self.docs count] == 0 && section==0) {
           UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
           UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, tableView.frame.size.width, 20)];
           label.font = [UIFont fontWithName:@"MuseoSans-500" size:18.0];
@@ -305,7 +330,7 @@ heightForHeaderInSection:(NSInteger)section {
      label.font = [UIFont fontWithName:@"MuseoSans-500" size:18.0];
      //[label setFont:[UIFont boldSystemFontOfSize:14]];
      [label setTextColor:[UIColor whiteColor]];
-     NSString *string =(section==0)?@"Guides":((section==1)?@"Categories":@"Wikis");//[list objectAtIndex:section];
+     NSString *string=(section==0)?NSLocalizedString(@"Guides", nil):((section==1)?NSLocalizedString(@"Categories", nil):((section==2)?NSLocalizedString(@"Wikis", nil):NSLocalizedString(@"Documents", nil)));//[list objectAtIndex:section];
      /* Section header is in 0th index... */
      [label setText:string];
      [view addSubview:label];
@@ -321,13 +346,55 @@ heightForHeaderInSection:(NSInteger)section {
      if (indexPath.section == 0) {
           [GuideLib loadAndPresentGuideForGuideid:self.guides[indexPath.row][@"guideid"]];
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-     } else {
+     } else if (indexPath.section == 2) {
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
           NSString *url = [self.wikis[indexPath.row][@"url"] isEqual:@""] ? @"http://www.dozuki.com" : self.wikis[indexPath.row][@"url"];
           WikiVC *viewController = [[WikiVC alloc] initWithNibName:@"WikiVC" bundle:nil];
           viewController.url = url;
           [self.navigationController pushViewController:viewController animated:true];
+     } else {
+          [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+          NSString *list = self.docs[indexPath.row][@"filename"];
+          NSArray *listItems = [list componentsSeparatedByString:@"."];
+          NSString *urla =
+          [[NSString alloc] initWithFormat: @"%@%@.%@", @"https://dozuki-documents.s3.amazonaws.com/",
+           [self.docs[indexPath.row][@"guid"] isEqual:@""] ? @"" : self.docs[indexPath.row][@"guid"], listItems[1]];
+
+          NSURL* url = [[NSURL alloc] initWithString:urla];
+          NSURL* documentsUrl = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+          NSURL* destinationUrl = [documentsUrl URLByAppendingPathComponent:self.docs[indexPath.row][@"filename"]];
+
+          NSError* err = nil;
+          NSData* fileData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&err];
+          if (!err && fileData && fileData.length && [fileData writeToURL:destinationUrl atomically:true]) {
+
+               UIDocumentInteractionController* document = [UIDocumentInteractionController interactionControllerWithURL:destinationUrl];
+              // [UINavigationBar appearance].tintColor = [UIColor blueColor];
+
+  //             document.UTI = @"com.adobe.pdf"; //@"public.jpeg";
+               document.delegate = self;
+               document.name = @"";
+               [document presentPreviewAnimated:YES];
+          }
      }
+}
+
+#pragma mark - UIDocumentInteractionControllerDelegate
+
+- (void)documentInteractionControllerDidDismissOptionsMenu:(UIDocumentInteractionController *)controller {
+     //[UINavigationBar appearance].tintColor = [UIColor whiteColor];
+}
+
+- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller {
+     return self;
+}
+
+- (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller {
+     return self.view;
+}
+
+- (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller {
+     return self.view.frame;
 }
 
 - (void)dealloc {

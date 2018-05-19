@@ -630,6 +630,8 @@ BOOL searchViewEnabled;
                         self.tableView.transform = option ? CGAffineTransformMakeTranslation(0, [Config currentConfig].scanner ? 88 : 44) : CGAffineTransformIdentity;
                     } completion:nil
     ];
+     
+     
     
     // Only on iPhone do we want to make more room
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
@@ -800,7 +802,7 @@ heightForHeaderInSection:(NSInteger)section {
      label.font = [UIFont fontWithName:@"MuseoSans-500" size:18.0];
      //[label setFont:[UIFont boldSystemFontOfSize:14]];
      [label setTextColor:[UIColor whiteColor]];
-     NSString *string =(section==0)?@"Guides":((section==1)?@"Categories":@"Wikis");//[list objectAtIndex:section];
+     NSString *string =(section==0)?NSLocalizedString(@"Guides", nil):((section==1)?NSLocalizedString(@"Categories", nil):NSLocalizedString(@"Wikis", nil));//[list objectAtIndex:section];
 
      /* Section header is in 0th index... */
      [label setText:string];

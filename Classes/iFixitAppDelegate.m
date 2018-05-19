@@ -106,7 +106,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 // Override point for customization after app launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
      /* Configure. */
-     [Config currentConfig].dozuki = YES;
+     [Config currentConfig].dozuki = NO;
      [Config currentConfig].site = ConfigHyperthermToolkit;
      
      /* Track. */

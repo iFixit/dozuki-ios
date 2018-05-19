@@ -20,7 +20,7 @@ static Config *currentConfig = nil;
     if (!currentConfig) {
         currentConfig = [[self alloc] init];
         currentConfig.site = ConfigHyperthermToolkit;
-        currentConfig.dozuki = YES;
+        currentConfig.dozuki = NO;
     }
     return currentConfig;
 }
@@ -92,13 +92,14 @@ static Config *currentConfig = nil;
               self.scanner = NO;
               break;
          case ConfigHyperthermToolkit:
-            self.host = @"www.dozuki.com";
-            self.baseURL = nil; //hyperthermtoolkit.dozuki.com
+            self.host = @"hyperthermtoolkit.dozuki.com";
+          self.baseURL = @"http://hyperthermtoolkit.dozuki.com";
             answersEnabled = NO;
             collectionsEnabled = NO;
             self.store = nil;
-            self.private = NO;
+            self.private = YES;
             self.scanner = NO;
+              self.sso = @"http://hyperthermtoolkit.dozuki.com";
             break;
         case ConfigComcast:
             self.host = @"comcast.dozuki.com";
