@@ -381,8 +381,11 @@ heightForHeaderInSection:(NSInteger)section {
 
 #pragma mark - UIDocumentInteractionControllerDelegate
 
+- (void)documentInteractionControllerDidEndPreview:(UIDocumentInteractionController *)controller {
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
 - (void)documentInteractionControllerDidDismissOptionsMenu:(UIDocumentInteractionController *)controller {
-     //[UINavigationBar appearance].tintColor = [UIColor whiteColor];
 }
 
 - (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller {
@@ -390,7 +393,8 @@ heightForHeaderInSection:(NSInteger)section {
 }
 
 - (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller {
-     return self.view;
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    return self.view;
 }
 
 - (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller {
