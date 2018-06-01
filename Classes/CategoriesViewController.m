@@ -562,7 +562,7 @@ BOOL searchViewEnabled;
      if ([searchText isEqual:@""]) {
           self.searching = NO;
           noResults = NO;
-          [self.tableView reloadData];    
+          [self.tableView reloadData];
           return;
      }
      
@@ -601,7 +601,7 @@ BOOL searchViewEnabled;
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar {
      
-     Reachability *reachability = [Reachability reachabilityForInternetConnection];    
+     Reachability *reachability = [Reachability reachabilityForInternetConnection];
      NetworkStatus internetStatus = [reachability currentReachabilityStatus];
      
      if (internetStatus == NotReachable) {

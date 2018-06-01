@@ -346,6 +346,13 @@ heightForHeaderInSection:(NSInteger)section {
      if (indexPath.section == 0) {
           [GuideLib loadAndPresentGuideForGuideid:self.guides[indexPath.row][@"guideid"]];
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+     } else if (indexPath.section == 1) {
+          if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+               iPhoneDeviceViewController *vc = [[iPhoneDeviceViewController alloc] initWithTopic:self.cats[indexPath.row][@"name"]];
+               //           vc.title = category[@"display_title"];
+               [self.navigationController pushViewController:vc animated:YES];
+               [vc release];
+          }
      } else if (indexPath.section == 2) {
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
           NSString *url = [self.wikis[indexPath.row][@"url"] isEqual:@""] ? @"http://www.dozuki.com" : self.wikis[indexPath.row][@"url"];
