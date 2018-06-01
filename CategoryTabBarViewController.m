@@ -370,8 +370,9 @@ BOOL onTablet, initialLoad, showTabBar;
         }
     // For iPhone we change the subview frame to account for hidden tabbar
     } else {
+         [self configureFontSizeForTabBarItems];
         // iOS7 works much differently, we essentially shrink and expand the tabbar frame
-        if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        /*if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
             self.tabBar.frame = (self.listViewController.viewControllers.count == 1)
                 ? CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y, 0, 0)
                 : CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y, bounds.size.width, 49);
@@ -383,13 +384,13 @@ BOOL onTablet, initialLoad, showTabBar;
                 ? CGRectMake(0, 0, bounds.size.width, bounds.size.height + 44)
                 : CGRectMake(0, 0, bounds.size.width, bounds.size.height - 27)
             ];
-        }
+        }*/
     }
 }
 
 // Resize our fonts to avoid edge case on iOS 7 when resizing tabbar
 - (void)configureFontSizeForTabBarItems {
-    NSDictionary *textAttributes = @{UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:12.0]};
+   NSDictionary *textAttributes = @{UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:14.0]};
 
     for (id viewController in self.tabBarViewControllers) {
         [[viewController tabBarItem] setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
