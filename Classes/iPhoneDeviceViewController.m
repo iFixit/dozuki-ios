@@ -347,6 +347,7 @@ heightForHeaderInSection:(NSInteger)section {
           [GuideLib loadAndPresentGuideForGuideid:self.guides[indexPath.row][@"guideid"]];
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
      } else if (indexPath.section == 1) {
+          [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
           if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
                iPhoneDeviceViewController *vc = [[iPhoneDeviceViewController alloc] initWithTopic:self.cats[indexPath.row][@"name"]];
                //           vc.title = category[@"display_title"];
@@ -362,6 +363,19 @@ heightForHeaderInSection:(NSInteger)section {
      } else {
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
           NSString *list = self.docs[indexPath.row][@"filename"];
+          
+          if ([list rangeOfString:@".pot" options:NSRegularExpressionSearch].location != NSNotFound) {
+               
+               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice"
+                                                               message:@"Filetype is not supported."
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
+               [alert show];
+               [alert release];
+               return;
+          }
+          
           NSArray *listItems = [list componentsSeparatedByString:@"."];
           NSString *urla =
           [[NSString alloc] initWithFormat: @"%@%@.%@", @"https://dozuki-documents.s3.amazonaws.com/",
