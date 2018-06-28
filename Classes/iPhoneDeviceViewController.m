@@ -18,6 +18,8 @@
 #import "GuideLib.h"
 #import "WikiCell.h"
 #import "WikiVC.h"
+#import "Video.h"
+#import "Utility.h"
 
 @implementation iPhoneDeviceViewController
 
@@ -25,6 +27,7 @@
 @synthesize guides=_guides;
 @synthesize wikis=_wikis;
 @synthesize docs=_docs;
+@synthesize videos=_videos;
 
 - (id)initWithTopic:(NSString *)topic {
      if ((self = [super initWithNibName:nil bundle:nil])) {
@@ -33,7 +36,7 @@
           self.wikis = [NSArray array];
           self.cats = [NSArray array];
           self.docs = [NSArray array];
-
+          self.videos = [NSArray array];
           if (!topic)
                self.title = NSLocalizedString(@"Guides", nil);
           
@@ -114,6 +117,14 @@
      self.wikis = [data arrayForKey:@"related_wikis"];
      self.cats = [data arrayForKey:@"children"];
      self.docs = [data arrayForKey:@"documents"];
+     NSDictionary* contents = [data objectForKey:@"contents_json"];
+     if (contents != NULL) {
+          
+          NSArray* content = [contents arrayForKey:@"content"];
+          if (content != NULL) {
+               self.videos = [Video parseForVideos:content];
+          }
+     }
      [self.tableView reloadData];
      [self hideLoading];
      
@@ -144,6 +155,7 @@
                                                                     target:[[UIApplication sharedApplication] delegate]
                                                                     action:@selector(showDozukiSplash)];
           self.navigationItem.leftBarButtonItem = button;
+          
           [button release];
      }
      
@@ -181,7 +193,10 @@
      if (self.docs != nil && [self.docs count] > 0) {
           amount++;
      }
-     return 4;
+     if (self.videos != nil && [self.videos count] > 0) {
+          amount++;
+     }
+     return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -194,8 +209,9 @@
           return [self.wikis count];
      } else if (section == 3) {
           return [self.docs count];
+     } else if (section == 4) {
+          return [self.videos count];
      }
-     
      return 0;
 }
 
@@ -204,9 +220,15 @@
      
      if (indexPath.section == 0) {
           
+          NSString* currentLangId = [Utility getDeviceLanguage];
           GuideCell *cell = (GuideCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
           if (cell == nil) {
                cell = [[[GuideCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+          }
+          NSString* guideLangId = self.guides[indexPath.row][@"locale"];
+          if (guideLangId != NULL && ![guideLangId isEqualToString:currentLangId]) {
+               
+               [cell displayLanguage:guideLangId];
           }
           
           // Configure the cell...
@@ -252,6 +274,19 @@
           [cell setNeedsLayout];
           return cell;
           
+     }  else if (indexPath.section == 4) {
+          
+          GuideCell *cell = (GuideCell*)[tableView dequeueReusableCellWithIdentifier:@"GuideCell"];
+          if (cell == nil) {
+               cell = [[GuideCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:@"GuideCell"];
+          }
+          NSString *title = [self.videos[indexPath.row][@"title"] isEqual:@""] ? NSLocalizedString(@"Untitled", nil) : self.videos[indexPath.row][@"title"];
+          [cell.textLabel setText:title];
+          //NSDictionary *imageData = self.docs[indexPath.row][@"image"];
+          //NSString *thumbnailURL = [imageData isEqual:[NSNull null]] ? nil : imageData[@"medium"];
+          //[cell.imageView setImageWithURL:[NSURL URLWithString:thumbnailURL] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
+          [cell setNeedsLayout];
+          return cell;
      }  else {
           
           GuideCell *cell = (GuideCell*)[tableView dequeueReusableCellWithIdentifier:@"GuideCell"];
@@ -289,8 +324,10 @@ heightForHeaderInSection:(NSInteger)section {
           count = [self.wikis count];
      } else if (section == 3) {
           count = [self.docs count];
+     } else if (section == 4) {
+          count = [self.videos count];
      }
-     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && [self.docs count] == 0 && section==0) {
+     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && [self.docs count] && [self.videos count] == 0 && section==0) {
           return 40.0;
      } else if (count == 0) {
           return 0.0;
@@ -309,8 +346,10 @@ heightForHeaderInSection:(NSInteger)section {
           count = [self.wikis count];
      } else if (section == 3) {
           count = [self.docs count];
+     } else if (section == 4) {
+          count = [self.videos count];
      }
-     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && [self.docs count] == 0 && section==0) {
+     if ([self.guides count] == 0 && [self.cats count] == 0 && [self.wikis count] == 0 && [self.docs count] == 0 && [self.videos count] == 0 && section==0) {
           UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
           UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, tableView.frame.size.width, 20)];
           label.font = [UIFont fontWithName:@"MuseoSans-500" size:18.0];
@@ -330,7 +369,7 @@ heightForHeaderInSection:(NSInteger)section {
      label.font = [UIFont fontWithName:@"MuseoSans-500" size:18.0];
      //[label setFont:[UIFont boldSystemFontOfSize:14]];
      [label setTextColor:[UIColor whiteColor]];
-     NSString *string=(section==0)?NSLocalizedString(@"Guides", nil):((section==1)?NSLocalizedString(@"Categories", nil):((section==2)?NSLocalizedString(@"Wikis", nil):NSLocalizedString(@"Documents", nil)));//[list objectAtIndex:section];
+     NSString *string=(section==0)?NSLocalizedString(@"Guides", nil):((section==1)?NSLocalizedString(@"Categories", nil):((section==2)?NSLocalizedString(@"Wikis", nil):((section==3)?NSLocalizedString(@"Documents", nil):NSLocalizedString(@"Videos", nil))));//[list objectAtIndex:section];
      /* Section header is in 0th index... */
      [label setText:string];
      [view addSubview:label];
@@ -360,7 +399,13 @@ heightForHeaderInSection:(NSInteger)section {
           WikiVC *viewController = [[WikiVC alloc] initWithNibName:@"WikiVC" bundle:nil];
           viewController.url = url;
           [self.navigationController pushViewController:viewController animated:true];
-     } else {
+     } else if (indexPath.section == 4) {
+          [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+          NSString *url = [self.videos[indexPath.row][@"url"] isEqual:@""] ? @"http://www.dozuki.com" : self.videos[indexPath.row][@"url"];
+          WikiVC *viewController = [[WikiVC alloc] initWithNibName:@"WikiVC" bundle:nil];
+          viewController.url = url;
+          [self.navigationController pushViewController:viewController animated:true];
+     }  else {
           [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
           NSString *list = self.docs[indexPath.row][@"filename"];
           

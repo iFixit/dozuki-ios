@@ -27,6 +27,7 @@
 #import "MGSplitViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+@import Firebase;
 
 static const NSInteger kGANDispatchPeriodSec = 10;
 
@@ -140,6 +141,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
           firstLoad = NO;
      }
      [Fabric with:@[[Crashlytics class]]];
+     [FIRApp configure];
      return YES;
 }
 

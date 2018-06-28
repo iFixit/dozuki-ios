@@ -98,7 +98,6 @@
 		AB4D33BD17A042270080C40A /* answers.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D33B717A042270080C40A /* answers.png */; };
 		AB4D33BE17A042270080C40A /* answers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D33B817A042270080C40A /* answers@2x.png */; };
 		AB4D33BF17A042270080C40A /* guides.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D33B917A042270080C40A /* guides.png */; };
-		AB4D33C017A042270080C40A /* guides@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D33BA17A042270080C40A /* guides@2x.png */; };
 		AB4D33C117A042270080C40A /* moreinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D33BB17A042270080C40A /* moreinfo.png */; };
 		AB4D33C217A042270080C40A /* moreinfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D33BC17A042270080C40A /* moreinfo@2x.png */; };
 		AB5C74BE17A73069003AD63B /* WaitImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5C74BD17A73069003AD63B /* WaitImage.png */; };
@@ -159,6 +158,8 @@
 		C184D4C71210CDB900953C39 /* GuideView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C184D4C51210CDB900953C39 /* GuideView~ipad.xib */; };
 		C184D5381210D8CD00953C39 /* GuideIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C184D5361210D8CD00953C39 /* GuideIntroViewController.m */; };
 		C184D5391210D8CD00953C39 /* GuideIntroViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C184D5371210D8CD00953C39 /* GuideIntroViewController~ipad.xib */; };
+		C18929EB20E4659C00C8D755 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C18929EA20E4659C00C8D755 /* GoogleService-Info.plist */; };
+		C199130C20C8A449009AA90D /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = C199130A20C8A447009AA90D /* Video.m */; };
 		C1C894F7121B447E0036FAFC /* TapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C894F6121B447E0036FAFC /* TapDetectingImageView.m */; };
 		C1D980A1120DFA5B00509D18 /* GuideImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D980A0120DFA5B00509D18 /* GuideImage.m */; };
 		C1D980AA120DFB2900509D18 /* GuideStep.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D980A9120DFB2900509D18 /* GuideStep.m */; };
@@ -427,7 +428,6 @@
 		AB4D33B717A042270080C40A /* answers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answers.png; sourceTree = "<group>"; };
 		AB4D33B817A042270080C40A /* answers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "answers@2x.png"; sourceTree = "<group>"; };
 		AB4D33B917A042270080C40A /* guides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides.png; sourceTree = "<group>"; };
-		AB4D33BA17A042270080C40A /* guides@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guides@2x.png"; sourceTree = "<group>"; };
 		AB4D33BB17A042270080C40A /* moreinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreinfo.png; sourceTree = "<group>"; };
 		AB4D33BC17A042270080C40A /* moreinfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreinfo@2x.png"; sourceTree = "<group>"; };
 		AB5C74BD17A73069003AD63B /* WaitImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WaitImage.png; sourceTree = "<group>"; };
@@ -512,6 +512,9 @@
 		C184D5351210D8CD00953C39 /* GuideIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideIntroViewController.h; sourceTree = "<group>"; };
 		C184D5361210D8CD00953C39 /* GuideIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideIntroViewController.m; sourceTree = "<group>"; };
 		C184D5371210D8CD00953C39 /* GuideIntroViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GuideIntroViewController~ipad.xib"; sourceTree = "<group>"; };
+		C18929EA20E4659C00C8D755 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C199130A20C8A447009AA90D /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		C199130B20C8A448009AA90D /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		C1C894F5121B447E0036FAFC /* TapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingImageView.h; sourceTree = "<group>"; };
 		C1C894F6121B447E0036FAFC /* TapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingImageView.m; sourceTree = "<group>"; };
 		C1D9809F120DFA5B00509D18 /* GuideImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideImage.h; sourceTree = "<group>"; };
@@ -839,6 +842,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C18929EA20E4659C00C8D755 /* GoogleService-Info.plist */,
 				C1F692511D638C9F00906B2D /* Images.xcassets */,
 				ABE472451746E0610002F3D6 /* Localizable.strings */,
 				DACE446C1353CE3700F78360 /* css */,
@@ -944,7 +948,6 @@
 				AB4D33B717A042270080C40A /* answers.png */,
 				AB4D33B817A042270080C40A /* answers@2x.png */,
 				AB4D33B917A042270080C40A /* guides.png */,
-				AB4D33BA17A042270080C40A /* guides@2x.png */,
 				AB4D33BB17A042270080C40A /* moreinfo.png */,
 				AB4D33BC17A042270080C40A /* moreinfo@2x.png */,
 			);
@@ -976,6 +979,8 @@
 				9CA4756618CAFEF3005AFE08 /* Utility.m */,
 				ABE00C41178BE34F006FD574 /* CategoriesSingleton.h */,
 				ABE00C42178BE34F006FD574 /* CategoriesSingleton.m */,
+				C199130B20C8A448009AA90D /* Video.h */,
+				C199130A20C8A447009AA90D /* Video.m */,
 				DACE7FF6165728010013FFFD /* Media Types */,
 				C10F2710120CE5900027A28D /* Guide.h */,
 				C10F2711120CE5900027A28D /* Guide.m */,
@@ -1443,7 +1448,6 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				58371555D0BB4407AA5E5015 /* [CP] Copy Pods Resources */,
-				5A9A334BC8773A53B14F2721 /* [CP] Embed Pods Frameworks */,
 				C1205D601F7B041F00509078 /* ShellScript */,
 			);
 			buildRules = (
@@ -1524,6 +1528,7 @@
 				C13B3A531EBFEA250094ED72 /* WikiVC.xib in Resources */,
 				DA61C55713383571000028C3 /* titleImage.png in Resources */,
 				DA61C55813383571000028C3 /* titleImage@2x.png in Resources */,
+				C18929EB20E4659C00C8D755 /* GoogleService-Info.plist in Resources */,
 				DA3E3E3B133C1A8E0070615F /* MainWindow.xib in Resources */,
 				DA881858134A5AFE004387CE /* BookmarksView.xib in Resources */,
 				DACE44381353B87E00F78360 /* x-icon.png in Resources */,
@@ -1660,7 +1665,6 @@
 				9C47FB3617F623D40074CEBE /* icon80.png in Resources */,
 				9C002FBF182EE57C00822063 /* accustream_logo_transparent.png in Resources */,
 				AB4D33BF17A042270080C40A /* guides.png in Resources */,
-				AB4D33C017A042270080C40A /* guides@2x.png in Resources */,
 				AB4D33C117A042270080C40A /* moreinfo.png in Resources */,
 				AB4D33C217A042270080C40A /* moreinfo@2x.png in Resources */,
 				9C3811471A240A68004DC698 /* magnoliamedical_logo_transparent.png in Resources */,
@@ -1709,6 +1713,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh",
+				"${PODS_ROOT}/FontAwesomeIconFactory/Font-Awesome/fonts/FontAwesome.otf",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png",
@@ -1716,26 +1721,15 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.otf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-back.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-help.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-helpicons.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-samples.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A9A334BC8773A53B14F2721 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6DAA79E961574847B3059BB7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1817,6 +1811,7 @@
 				DA881857134A5AFE004387CE /* BookmarksViewController.m in Sources */,
 				DA3DE74C134CF57000AD5050 /* GuideBookmarker.m in Sources */,
 				DA3DE755134D15E400AD5050 /* UIButton+WebCache.m in Sources */,
+				C199130C20C8A449009AA90D /* Video.m in Sources */,
 				DAF0C6D3134E62BF003B4DF6 /* GuideBookmarks.m in Sources */,
 				DA666AF31360E2A4002B1D62 /* GuideCatchingWebView.m in Sources */,
 				DAA750881368DA87002AA546 /* WBFont.mm in Sources */,
@@ -1878,6 +1873,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1909,7 +1905,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.new;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hypertherm.waterjet.supportkit;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1925,6 +1921,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1954,7 +1951,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.new;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hypertherm.waterjet.supportkit;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2056,6 +2053,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2087,7 +2085,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm.new;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hypertherm.waterjet.supportkit;
 				PRODUCT_NAME = iFixit;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

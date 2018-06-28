@@ -9,5 +9,7 @@ pod 'ZBarSDK', '~> 1.3'
 pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'FontAwesomeIconFactory'
+pod 'Firebase/Core'
 
 end

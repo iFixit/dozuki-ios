@@ -15,6 +15,8 @@
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 #import <QuartzCore/QuartzCore.h>
+#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory.h>
+#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+iOS.h>
 
 @interface CategoryTabBarViewController ()
 
@@ -214,26 +216,27 @@ BOOL onTablet, initialLoad, showTabBar;
 - (void)buildTabBarItems {
     
     NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
-    
+     NIKFontAwesomeIconFactory *factory = [NIKFontAwesomeIconFactory barButtonItemIconFactory];
+
     // If on a tablet, we initialize the guide layout as our first viewcontroller
     if (onTablet) {
         [viewControllers addObject:self.detailGridViewController];
         self.detailGridViewController.tabBarItem.title = NSLocalizedString(@"Guides", nil);
         self.detailGridViewController.tabBarItem.tag = self.GUIDES;
-        self.detailGridViewController.tabBarItem.image = [UIImage imageNamed:@"guides"];
+        self.detailGridViewController.tabBarItem.image = [factory createImageForIcon:NIKFontAwesomeIconFile];
     } else {
         // On iPhone our first view controller is a navigation controller
         [viewControllers addObject:self.listViewController];
         self.listViewController.tabBarItem.title = NSLocalizedString(@"Guides", nil);
         self.listViewController.tabBarItem.tag = self.GUIDES;
-        self.listViewController.tabBarItem.image = [UIImage imageNamed:@"guides"];
+        self.listViewController.tabBarItem.image = [factory createImageForIcon:NIKFontAwesomeIconFile];
         // Create a reference that our navigation controller can use to access the tabbar controller easily
         self.listViewController.categoryTabBarViewController = self;
     }
     
     self.categoryMoreInfoViewController.tabBarItem.title = NSLocalizedString(@"More Info", nil);
     self.categoryMoreInfoViewController.tabBarItem.tag = self.MORE_INFO;
-    self.categoryMoreInfoViewController.tabBarItem.image = [UIImage imageNamed:@"moreinfo"];
+    self.categoryMoreInfoViewController.tabBarItem.image = [factory createImageForIcon:NIKFontAwesomeIconInfoCircle];
     
     // Not every site has answers enabled
     if ([Config currentConfig].answersEnabled) {
