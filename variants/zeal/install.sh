@@ -11,3 +11,6 @@ cp -v icon* ../../
 cp -v project.pbxproj ../../iFixit.xcodeproj/project.pbxproj
 mkdir ../../iFixit/Images.xcassets/AppIcon-3.appiconset
 cp -v AppIcon-3.appiconset/* ../../iFixit/Images.xcassets/AppIcon-3.appiconset
+cd ../..
+pod install
+open iFixit.xcworkspace
