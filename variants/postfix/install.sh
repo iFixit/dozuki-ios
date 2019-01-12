@@ -19,6 +19,7 @@ cp -v CategoriesViewController.m ../../Classes/CategoriesViewController.m
 cp -v Default* ../../
 cp -v dozuki.sh ../../
 cp -v icon* ../../
+cp -v Podfile ../../
 cp -v LoginViewController.m ../../Classes/LoginViewController.m
 cp -v project.pbxproj ../../iFixit.xcodeproj/project.pbxproj
 mkdir ../../iFixit/Images.xcassets/AppIcon-2.appiconset
@@ -26,3 +27,6 @@ mkdir ../../Postmix.xcodeproj
 cp -v AppIcon-2.appiconset/* ../../iFixit/Images.xcassets/AppIcon-2.appiconset
 cp -v contents.xcworkspacedata ../../iFixit.xcworkspace/contents.xcworkspacedata
 cp -v iPhoneDeviceViewController.h ../../Classes/iPhoneDeviceViewController.h
+cd ../../
+pod install
+open iFixit.xcworkspace

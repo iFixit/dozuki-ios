@@ -22,6 +22,8 @@ git checkout -- ../../Classes/CategoriesViewController.m
 git checkout -- ../../Classes/Config.h
 git checkout -- ../../Classes/iFixitAPI.m
 git checkout -- ../../Default-*
+git checkout -- ../../Default*
+git checkout -- ../../Pods*
 
 rm -rf ../../Postmix.xcodeproj/
 rm -rf ../../Default-Portrait-736h\@3x.png
