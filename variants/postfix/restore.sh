@@ -24,6 +24,7 @@ git checkout -- ../../Classes/iFixitAPI.m
 git checkout -- ../../Default-*
 git checkout -- ../../Default*
 git checkout -- ../../Pods*
+git checkout -- ../../Podfile.lock
 
 rm -rf ../../Postmix.xcodeproj/
 rm -rf ../../Default-Portrait-736h\@3x.png
