@@ -12,38 +12,61 @@
 
 @implementation SSOViewController
 
+static bool ssoActive;
+
 @synthesize delegate;
+
++ (id)viewControllerForURLNoSSO:(NSString *)url delegate:(id<LoginViewControllerDelegate>)delegate {
+     
+     SSOViewController* vc = [[SSOViewController alloc] initWithAddress:url withTitle:@""];
+     ssoActive = false;
+     vc.delegate = delegate;
+     vc.tintColor = UIColor.whiteColor;
+     return [vc autorelease];
+}
+
+- (BOOL)prefersStatusBarHidden {
+     return YES;
+}
 
 + (id)viewControllerForURL:(NSString *)url delegate:(id<LoginViewControllerDelegate>)delegate {
     // First clear all cookies.
+    ssoActive = true;
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *cookie in [storage cookies]) {
-        [storage deleteCookie:cookie];
-    }
-//     BFLog(@"sso %@", url);
+          for (NSHTTPCookie *cookie in [storage cookies]) {
+               [storage deleteCookie:cookie];
+          }
+          //     BFLog(@"sso %@", url);
 
-    // Set a custom cookie for simple success SSO redirect: sso-origin=SHOW_SUCCESS
-    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:
+          // Set a custom cookie for simple success SSO redirect: sso-origin=SHOW_SUCCESS
+          NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:
                             [NSDictionary dictionaryWithObjectsAndKeys:@"sso-origin", NSHTTPCookieName,
                                                                        @"SHOW_SUCCESS", NSHTTPCookieValue,
                                                                        [Config host], NSHTTPCookieDomain,
                                                                        @"/", NSHTTPCookiePath,
                                                                        nil]];
-    [storage setCookie:cookie];
-
-    SSOViewController* vc = [[SSOViewController alloc] initWithAddress:url];
-    vc.delegate = delegate;
-    return [vc autorelease];
+          [storage setCookie:cookie];
+     SSOViewController* vc = [[SSOViewController alloc] initWithAddress:url];
+     vc.delegate = delegate;
+     return [vc autorelease];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     // Ensure we have a solid navigation bar
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [super webViewDidFinishLoad:webView];
-
+     
+     if (!ssoActive) {
+          NSString *cssString = @"header#mainHeader { display: none; }";
+          NSString *javascriptString = @"var style = document.createElement('style'); style.innerHTML = '%@'; document.head.appendChild(style)";
+          NSString *javascriptWithCSSString = [NSString stringWithFormat:javascriptString, cssString];
+          [webView stringByEvaluatingJavaScriptFromString:javascriptWithCSSString];
+          return;
+     }
+     
     NSString *host = [webView.request.URL host];
      NSLog(@"sso finished loading %@", host);
 

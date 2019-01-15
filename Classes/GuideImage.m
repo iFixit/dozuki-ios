@@ -11,16 +11,23 @@
 
 @implementation GuideImage
 
-@synthesize iImageid, url, mini, thumbnail, standard, medium, large, huge;
+@synthesize iImageid, url, url_large, url_thumbnail, mini, thumbnail, standard, medium, large, huge;
 
 + (GuideImage *)guideImageWithDictionary:(NSDictionary *)dict {
 	GuideImage *guideImage = [[GuideImage alloc] init];
 	guideImage.iImageid = dict[@"id"];
-	guideImage.url = dict[@"original"];
+     guideImage.url = dict[@"original"];
+     guideImage.url_large = dict[@"large"];
+     guideImage.url_thumbnail = dict[@"thumbnail"];
 	return [guideImage autorelease];
 }
 
 - (NSURL *)URLForSize:(NSString *)size {
+     if ([size isEqualToString:@"large"]) {
+          return [NSURL URLWithString:url_large];
+     } else if ([size isEqualToString:@"thumbnail"]) {
+          return [NSURL URLWithString:url_thumbnail];
+     }
    return [NSURL URLWithString:[NSString stringWithFormat:@"%@.%@", url, size]];
 }
 

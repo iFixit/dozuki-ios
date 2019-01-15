@@ -549,6 +549,13 @@ BOOL onTablet, initialLoad, showTabBar;
     
     // We need to find the view controller that this response belongs to
     for (id viewController in self.listViewController.viewControllers) {
+         
+         if(![viewController respondsToSelector:@selector(categoryMetaData)])
+         {
+              NSLog(@"barf");
+              continue;
+         }
+         
         NSDictionary *categoryInfo = [viewController categoryMetaData];
         NSString *categoryName = categoryInfo[@"name"] ? categoryInfo[@"name"] : categoryInfo[@"title"];
         

@@ -230,24 +230,62 @@
     }
 }
 
+- (void)downloadImageWithHeader:(NSURL *) imageURL forButton:(UIButton *)button {
+     
+     [button setImage:[UIImage imageNamed:@"WaitImage.png"] forState:UIControlStateNormal];
+     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:imageURL];
+     NSString *session = [[iFixitAPI sharedInstance].user session];
+     NSString *appid = [[iFixitAPI sharedInstance] appId];
+
+     if (session != nil && ![session isEqualToString:@""]) {
+          
+          [request setValue:[NSString stringWithFormat:@"api %@", session] forHTTPHeaderField:@"Authorization"];
+          [request setValue:appid forHTTPHeaderField:@"X-App-Id"];
+          NSMutableString *cookieStr = [NSMutableString string];
+          for (NSHTTPCookie *cookie in [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies) {
+               if (cookieStr.length) {
+                    [cookieStr appendString:@"; "];
+               }
+               [cookieStr appendFormat:@"%@=%@", cookie.name, cookie.value];
+          }
+          [request setValue:cookieStr forHTTPHeaderField:@"Cookie"];
+
+     }
+     [NSURLConnection sendAsynchronousRequest:request
+                                        queue:[NSOperationQueue mainQueue]
+                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                 if ( !error )
+                                 {
+                                      UIImage *image = [[UIImage alloc] initWithData:data];
+                                      [button setImage:image forState:UIControlStateNormal];
+                                 } else{
+                                 }
+                            }];
+}
+
 - (void)startImageDownloads {
     if ([self.step.images count] > 0) {
         // Download the image
         [mainImage setImageWithURL:[self.step.images[0] URLForSize:@"large"] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
-        
+         
         if ([self.step.images count] > 1) {
             [image1 setImageWithURL:[[self.step.images objectAtIndex:0] URLForSize:@"thumbnail"] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
+
             image1.hidden = NO;
         }
     }
 
     if ([self.step.images count] > 1) {
         [image2 setImageWithURL:[[self.step.images objectAtIndex:1] URLForSize:@"thumbnail"] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
+        // [self downloadImageWithHeader:[[self.step.images objectAtIndex:1] URLForSize:@"thumbnail"] forButton:image2];
+
         image2.hidden = NO;
     }
 
     if ([self.step.images count] > 2) {
         [image3 setImageWithURL:[[self.step.images objectAtIndex:2] URLForSize:@"thumbnail"] placeholderImage:[UIImage imageNamed:@"WaitImage.png"]];
+        // [self downloadImageWithHeader:[[self.step.images objectAtIndex:2] URLForSizeClean:@"thumbnail"] forButton:image3];
+
         image3.hidden = NO;
     }
 }

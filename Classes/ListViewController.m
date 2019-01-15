@@ -113,7 +113,15 @@
         [self.viewControllers[0] willAnimateRotationToInterfaceOrientation:[viewController interfaceOrientation] duration:0];
     // Make sure that we only update the tabbar when we need to
     } else if ([viewController isKindOfClass:[CategoriesViewController class]]) {
-        [self.categoryTabBarViewController updateTabBar:[self.topViewController categoryMetaData]];
+         
+         if([self.topViewController respondsToSelector:@selector(categoryMetaData)])
+         {
+              [self.categoryTabBarViewController updateTabBar:[self.topViewController categoryMetaData]];
+         }
+         else
+         {
+              NSLog(@"barf");
+         }
          
 //         self.xframe = ((UIViewController*)viewController).view.frame;
 //         self.xbounds = ((UIViewController*)viewController).view.bounds;

@@ -29,6 +29,8 @@
 #import "GAIDictionaryBuilder.h"
 #import "WikiVC.h"
 #import "SVProgressHUD.h"
+#import "SSOViewController.h"
+#import "iFixitAPI.h"
 
 @implementation CategoriesViewController
 
@@ -1029,17 +1031,49 @@ heightForHeaderInSection:(NSInteger)section {
           [SVProgressHUD show];
           
           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-               NSData* fileData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&err];
+               NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url      cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20.0f];
+               
+               [theRequest setHTTPMethod:@"GET"];
+               
+               NSString *session = [[iFixitAPI sharedInstance].user session];
+               
+               if (session != nil && ![session isEqualToString:@""]) {
+                    
+                    [theRequest setValue:[NSString stringWithFormat:@"api %@", session] forHTTPHeaderField:@"Authorization"];
+               }
+               
+               NSURLResponse *theResponse = NULL;
+               NSData *fileData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&theResponse error:&err];
+
                dispatch_async(dispatch_get_main_queue(), ^{
                     if (!err && fileData && fileData.length && [fileData writeToURL:destinationUrl atomically:true]) {
                          
-                         UIDocumentInteractionController* document = [UIDocumentInteractionController interactionControllerWithURL:destinationUrl];
-                         // [UINavigationBar appearance].tintColor = [UIColor blueColor];
+                         NSString* newStr = [NSString stringWithUTF8String:[fileData bytes]];
                          
-                         //             document.UTI = @"com.adobe.pdf"; //@"public.jpeg";
-                         document.delegate = self;
-                         document.name = @"";
-                         [document presentPreviewAnimated:YES];
+                         if ([newStr rangeOfString:@"DOCTYPE"].location == NSNotFound) {
+                              NSLog(@"string does not contain web");
+                              UIDocumentInteractionController* document = [UIDocumentInteractionController interactionControllerWithURL:destinationUrl];
+                              // [UINavigationBar appearance].tintColor = [UIColor blueColor];
+                              
+                              //             document.UTI = @"com.adobe.pdf"; //@"public.jpeg";
+                              document.delegate = self;
+                              document.name = @"";
+                              [document presentPreviewAnimated:YES];
+                         } else {
+                              NSLog(@"string contains web");
+                              WikiVC *viewController = [[WikiVC alloc] initWithNibName:@"WikiVC" bundle:nil];
+                              viewController.url = urla;
+                              [self.navigationController pushViewController:viewController animated:true];
+                              
+                             // SSOViewController *vc = [SSOViewController viewControllerForURLNoSSO:urla delegate:nil];
+                              //vc.modalPresentationCapturesStatusBarAppearance = YES;
+
+                               //[self presentModalViewController:vc animated:YES];
+                              
+                              //SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:url];
+                              //svc.delegate = self;
+                              //[self presentViewController:svc animated:YES completion:nil];
+                         }
                     }
                     [SVProgressHUD dismiss];
                });

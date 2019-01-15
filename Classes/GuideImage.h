@@ -10,6 +10,8 @@
 
 @property (nonatomic, retain) NSNumber *iImageid;
 @property (nonatomic, retain) NSString *url;
+@property (nonatomic, retain) NSString *url_large;
+@property (nonatomic, retain) NSString *url_thumbnail;
 @property (nonatomic, retain) UIImage *mini;
 @property (nonatomic, retain) UIImage *thumbnail;
 @property (nonatomic, retain) UIImage *standard;
@@ -19,5 +21,6 @@
 
 + (GuideImage *)guideImageWithDictionary:(NSDictionary *)dict;
 - (NSURL *)URLForSize:(NSString *)size;
+- (NSURL *)URLForSizeClean:(NSString *)size;
 
 @end

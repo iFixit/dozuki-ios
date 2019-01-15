@@ -10,7 +10,9 @@
 
 #import "LoginViewControllerDelegate.h"
 
-@interface SSOViewController : SVWebViewController <UIAlertViewDelegate>
+@interface SSOViewController : SVWebViewController <UIAlertViewDelegate> {
+}
 @property (nonatomic, assign) id<LoginViewControllerDelegate> delegate;
 + (id)viewControllerForURL:(NSString *)url delegate:(id<LoginViewControllerDelegate>)delegate;
++ (id)viewControllerForURLNoSSO:(NSString *)url delegate:(id<LoginViewControllerDelegate>)delegate;
 @end
