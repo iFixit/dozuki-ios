@@ -5,8 +5,8 @@ echo making pva
 cp -v iFixit-Info.plist ../../iFixit-Info.plist
 
 cp -v CategoryTabBarViewController.m ../../CategoryTabBarViewController.m
-cp -v CategoriesViewController.h ../../Classes/CategoriesViewController.h
-cp -v CategoriesViewController.m ../../Classes/CategoriesViewController.m
+#cp -v CategoriesViewController.h ../../Classes/CategoriesViewController.h
+#cp -v CategoriesViewController.m ../../Classes/CategoriesViewController.m
 cp -v Config.h ../../Classes/Config.h
 cp -v Config.m ../../Classes/Config.m
 cp -v iFixitAppDelegate.m ../../Classes/iFixitAppDelegate.m
