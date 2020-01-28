@@ -15,3 +15,4 @@ git checkout -- ../../Classes/Config.m
 git checkout -- ../../Classes/Config.h
 git checkout -- ../../Classes/iFixitAppDelegate.m
 rm ../../LaunchStoryboard.storyboard
+git checkout -- ../../iFixit/Images.xcassets
