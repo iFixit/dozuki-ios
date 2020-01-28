@@ -14,3 +14,4 @@ rm -rf ../../iFixit/Images.xcassets/AppIcon-4.appiconset
 git checkout -- ../../Classes/Config.m
 git checkout -- ../../Classes/Config.h
 git checkout -- ../../Classes/iFixitAppDelegate.m
+rm ../../LaunchStoryboard.storyboard
