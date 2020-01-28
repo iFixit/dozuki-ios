@@ -19,7 +19,12 @@
      NSURL *nsurl = [NSURL URLWithString:self.url];
      NSURLRequest *request = [NSURLRequest requestWithURL:nsurl];
      self.webView.delegate = self;
+     self.webView.scalesPageToFit = YES;
      [self.webView loadRequest:request];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+     [self.webView.scrollView setZoomScale:3.0 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
