@@ -136,6 +136,7 @@
 		C10F270C120CE5140027A28D /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C10F2707120CE5140027A28D /* SBJsonWriter.m */; };
 		C10F2712120CE5900027A28D /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = C10F2711120CE5900027A28D /* Guide.m */; };
 		C10F271A120CE6980027A28D /* iFixitAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C10F2719120CE6980027A28D /* iFixitAPI.m */; };
+		C11507AF23E0FBF200E18C39 /* LaunchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C11507AE23E0FBF200E18C39 /* LaunchStoryboard.storyboard */; };
 		C115FC2D12174FA1005D0B77 /* GuideImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C115FC2B12174FA1005D0B77 /* GuideImageViewController.m */; };
 		C11C0C9D1E00D8BF00435905 /* iFixit-App-Id.plist in Resources */ = {isa = PBXBuildFile; fileRef = C11C0C9C1E00D8BF00435905 /* iFixit-App-Id.plist */; };
 		C13657DA1EE104CF002689FB /* titleImagePepsi.png in Resources */ = {isa = PBXBuildFile; fileRef = C13657D91EE104CE002689FB /* titleImagePepsi.png */; };
@@ -484,6 +485,7 @@
 		C10F2711120CE5900027A28D /* Guide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guide.m; sourceTree = "<group>"; };
 		C10F2718120CE6980027A28D /* iFixitAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iFixitAPI.h; sourceTree = "<group>"; };
 		C10F2719120CE6980027A28D /* iFixitAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 6; lastKnownFileType = sourcecode.c.objc; path = iFixitAPI.m; sourceTree = "<group>"; };
+		C11507AE23E0FBF200E18C39 /* LaunchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchStoryboard.storyboard; sourceTree = "<group>"; };
 		C115FC2A12174FA1005D0B77 /* GuideImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideImageViewController.h; sourceTree = "<group>"; };
 		C115FC2B12174FA1005D0B77 /* GuideImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideImageViewController.m; sourceTree = "<group>"; };
 		C11C0C9C1E00D8BF00435905 /* iFixit-App-Id.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iFixit-App-Id.plist"; sourceTree = "<group>"; };
@@ -842,6 +844,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C11507AE23E0FBF200E18C39 /* LaunchStoryboard.storyboard */,
 				C18929EA20E4659C00C8D755 /* GoogleService-Info.plist */,
 				C1F692511D638C9F00906B2D /* Images.xcassets */,
 				ABE472451746E0610002F3D6 /* Localizable.strings */,
@@ -1619,6 +1622,7 @@
 				DA275DB615104CA400A8A09C /* logo_make@2x.png in Resources */,
 				DA275DB715104CA400A8A09C /* make_logo_transparent@2x.png in Resources */,
 				DA275DB915104CB400A8A09C /* noGuides@2x.png in Resources */,
+				C11507AF23E0FBF200E18C39 /* LaunchStoryboard.storyboard in Resources */,
 				9C6E961C19AE8BB200FE847D /* FA-Store.png in Resources */,
 				DA275DC11510510700A8A09C /* login@2x.png in Resources */,
 				DA275DC21510510700A8A09C /* register@2x.png in Resources */,
@@ -1712,7 +1716,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh",
 				"${PODS_ROOT}/FontAwesomeIconFactory/Font-Awesome/fonts/FontAwesome.otf",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png",
@@ -1731,7 +1735,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hypertherm/Pods-Hypertherm-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6DAA79E961574847B3059BB7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1905,6 +1909,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 					"$(PROJECT_DIR)",
 				);
+				MARKETING_VERSION = 2.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
@@ -1951,6 +1956,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 					"$(PROJECT_DIR)",
 				);
+				MARKETING_VERSION = 2.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;
@@ -2085,6 +2091,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK",
 					"$(PROJECT_DIR)",
 				);
+				MARKETING_VERSION = 2.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dozuki.hypertherm;

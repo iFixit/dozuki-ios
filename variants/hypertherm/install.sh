@@ -2,6 +2,7 @@
 
 echo making hypertherm
 
+cp -v LaunchStoryboard.storyboard ../../LaunchStoryboard.storyboard
 cp -v iFixit-Info.plist ../../iFixit-Info.plist
 cp -v Podfile ../../Podfile
 cp -v icon* ../../
